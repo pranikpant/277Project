@@ -5,6 +5,8 @@
  */
 package pkg277Project;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author ianbw
@@ -27,9 +29,11 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        statusBar = new javax.swing.JLabel();
+        mydesktop = new javax.swing.JDesktopPane();
+        jComboBox2 = new javax.swing.JComboBox<>();
         Details = new javax.swing.JButton();
         Simple = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         Rename = new javax.swing.JMenuItem();
@@ -49,6 +53,10 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        statusBar.setText("jLabel1");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +66,33 @@ public class GUI extends javax.swing.JFrame {
 
         Simple.setText("Simple");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        mydesktop.setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        mydesktop.setLayer(Details, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        mydesktop.setLayer(Simple, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout mydesktopLayout = new javax.swing.GroupLayout(mydesktop);
+        mydesktop.setLayout(mydesktopLayout);
+        mydesktopLayout.setHorizontalGroup(
+            mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mydesktopLayout.createSequentialGroup()
+                .addGap(189, 189, 189)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Details)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Simple)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        mydesktopLayout.setVerticalGroup(
+            mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mydesktopLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Details)
+                    .addComponent(Simple))
+                .addContainerGap(421, Short.MAX_VALUE))
+        );
 
         File.setText("File");
 
@@ -107,6 +141,11 @@ public class GUI extends javax.swing.JFrame {
         Window.setText("Window");
 
         New.setText("New");
+        New.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NewMouseClicked(evt);
+            }
+        });
         Window.add(New);
 
         Cascade.setText("Cascade");
@@ -130,46 +169,50 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Details)
-                .addGap(18, 18, 18)
-                .addComponent(Simple)
-                .addGap(123, 123, 123))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(statusBar, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addGap(536, 536, 536))
+            .addComponent(mydesktop)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Details)
-                    .addComponent(Simple)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addComponent(mydesktop)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(statusBar))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailsActionPerformed
+    private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        
+    }                                       
+    private void TreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailsActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_DetailsActionPerformed
-
-    private void TreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TreeActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_TreeActionPerformed
 
     private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RunActionPerformed
 
-    private void CollapseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CollapseActionPerformed
+    private void CollapseActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+    }                                        
+
+    private void NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CollapseActionPerformed
+        // TODO add your handling code here:
+        final InternalFrame IF=new InternalFrame();
+        mydesktop.add(IF);
+        IF.setVisible(true);
     }//GEN-LAST:event_CollapseActionPerformed
+
+    private void NewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NewMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_NewMouseClicked
 
     /**
      * @param args the command line arguments
@@ -226,5 +269,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenu Window;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JDesktopPane mydesktop;
+    private javax.swing.JLabel statusBar;
     // End of variables declaration//GEN-END:variables
 }
