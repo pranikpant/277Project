@@ -27,23 +27,27 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
         Details = new javax.swing.JButton();
         Simple = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        File = new javax.swing.JMenu();
+        Rename = new javax.swing.JMenuItem();
+        Copy = new javax.swing.JMenuItem();
+        Delete = new javax.swing.JMenuItem();
+        Run = new javax.swing.JMenuItem();
+        Exit = new javax.swing.JMenuItem();
+        Tree = new javax.swing.JMenu();
+        Expand = new javax.swing.JMenuItem();
+        Collapse = new javax.swing.JMenuItem();
+        Window = new javax.swing.JMenu();
+        New = new javax.swing.JMenuItem();
+        Cascade = new javax.swing.JMenuItem();
+        Help = new javax.swing.JMenu();
+        Help_item = new javax.swing.JMenuItem();
+        About = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextField1.setText("C:");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
@@ -54,17 +58,71 @@ public class GUI extends javax.swing.JFrame {
 
         Simple.setText("Simple");
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jMenu2.setText("Tree");
-        jMenuBar1.add(jMenu2);
+        File.setText("File");
 
-        jMenu3.setText("Window");
-        jMenuBar1.add(jMenu3);
+        Rename.setText("Rename");
+        File.add(Rename);
 
-        jMenu4.setText("Help");
-        jMenuBar1.add(jMenu4);
+        Copy.setText("Copy");
+        File.add(Copy);
+
+        Delete.setText("Delete");
+        File.add(Delete);
+
+        Run.setText("Run");
+        Run.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RunActionPerformed(evt);
+            }
+        });
+        File.add(Run);
+
+        Exit.setText("Exit");
+        File.add(Exit);
+
+        jMenuBar1.add(File);
+
+        Tree.setText("Tree");
+        Tree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TreeActionPerformed(evt);
+            }
+        });
+
+        Expand.setText("Expand");
+        Tree.add(Expand);
+
+        Collapse.setText("Collapse");
+        Collapse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CollapseActionPerformed(evt);
+            }
+        });
+        Tree.add(Collapse);
+
+        jMenuBar1.add(Tree);
+
+        Window.setText("Window");
+
+        New.setText("New");
+        Window.add(New);
+
+        Cascade.setText("Cascade");
+        Window.add(Cascade);
+
+        jMenuBar1.add(Window);
+
+        Help.setText("Help");
+
+        Help_item.setText("Help");
+        Help.add(Help_item);
+
+        About.setText("About");
+        Help.add(About);
+
+        jMenuBar1.add(Help);
 
         setJMenuBar(jMenuBar1);
 
@@ -72,9 +130,9 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(217, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(185, Short.MAX_VALUE)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Details)
                 .addGap(18, 18, 18)
@@ -86,23 +144,32 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Details)
-                    .addComponent(Simple))
+                    .addComponent(Simple)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(441, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailsActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_DetailsActionPerformed
+
+    private void TreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TreeActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TreeActionPerformed
+
+    private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RunActionPerformed
+
+    private void CollapseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CollapseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CollapseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,13 +207,24 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem About;
+    private javax.swing.JMenuItem Cascade;
+    private javax.swing.JMenuItem Collapse;
+    private javax.swing.JMenuItem Copy;
+    private javax.swing.JMenuItem Delete;
     private javax.swing.JButton Details;
+    private javax.swing.JMenuItem Exit;
+    private javax.swing.JMenuItem Expand;
+    private javax.swing.JMenu File;
+    private javax.swing.JMenu Help;
+    private javax.swing.JMenuItem Help_item;
+    private javax.swing.JMenuItem New;
+    private javax.swing.JMenuItem Rename;
+    private javax.swing.JMenuItem Run;
     private javax.swing.JButton Simple;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu Tree;
+    private javax.swing.JMenu Window;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
