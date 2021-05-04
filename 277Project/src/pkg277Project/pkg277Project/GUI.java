@@ -217,8 +217,7 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         final FileFrame IF=new FileFrame();
         mydesktop.add(IF);
-        
-        
+         
     }                                         
 
     /**
