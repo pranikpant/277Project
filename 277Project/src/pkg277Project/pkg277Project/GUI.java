@@ -5,6 +5,7 @@
  */
 package pkg277Project;
 
+import java.io.*;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
@@ -92,8 +93,11 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(Simple))
                 .addContainerGap(411, Short.MAX_VALUE))
         );
-
-        DriveSpace.setText("Space in GB:");
+        // using C: drive for example
+        String driveName = "C:\\";
+        File drive = new File(driveName);
+        DriveSpace.setText("Current Drive: " + driveName + "    Free Space: " + drive.getFreeSpace()/1000000000 + " GB" + "    Used Space: " + (drive.getTotalSpace()-drive.getFreeSpace())/1000000000 + " GB" 
+        + "    Total Space: " + drive.getTotalSpace()/1000000000 + " GB");
 
         File.setText("File");
 
@@ -182,7 +186,7 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mydesktop)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(DriveSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DriveSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
