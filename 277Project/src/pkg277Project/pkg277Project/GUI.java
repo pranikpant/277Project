@@ -146,11 +146,6 @@ public class GUI extends javax.swing.JFrame {
                 NewActionPerformed(evt);
             }
         });
-        New.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewActionPerformed(evt);
-            }
-        });
         Window.add(New);
 
         Cascade.setText("Cascade");
@@ -226,7 +221,7 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         final FileFrame IF=new FileFrame();
         mydesktop.add(IF);
-        IF.setVisible(true);
+        
         
     }                                         
 
