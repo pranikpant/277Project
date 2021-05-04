@@ -34,6 +34,7 @@ public class GUI extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         Details = new javax.swing.JButton();
         Simple = new javax.swing.JButton();
+        DriveSpace = new java.awt.Label();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         Rename = new javax.swing.JMenuItem();
@@ -50,7 +51,6 @@ public class GUI extends javax.swing.JFrame {
         Help = new javax.swing.JMenu();
         Help_item = new javax.swing.JMenuItem();
         About = new javax.swing.JMenuItem();
-
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,8 +90,10 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Details)
                     .addComponent(Simple))
-                .addContainerGap(421, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
+
+        DriveSpace.setText("Space in GB:");
 
         File.setText("File");
 
@@ -118,11 +120,6 @@ public class GUI extends javax.swing.JFrame {
         jMenuBar1.add(File);
 
         Tree.setText("Tree");
-        Tree.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TreeActionPerformed(evt);
-            }
-        });
 
         Expand.setText("Expand");
         Tree.add(Expand);
@@ -140,6 +137,11 @@ public class GUI extends javax.swing.JFrame {
         Window.setText("Window");
 
         New.setText("New");
+        New.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewActionPerformed(evt);
+            }
+        });
         New.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NewActionPerformed(evt);
@@ -179,12 +181,16 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mydesktop)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(DriveSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mydesktop)
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DriveSpace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -205,8 +211,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutActionPerformed
         // TODO add your handling code here:
-        new AboutDialog(null,true).show();
-        
+        new AboutDialog(null,true).show(); 
     }//GEN-LAST:event_AboutActionPerformed
 
     private void CollapseActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -263,6 +268,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem Copy;
     private javax.swing.JMenuItem Delete;
     private javax.swing.JButton Details;
+    private java.awt.Label DriveSpace;
     private javax.swing.JMenuItem Exit;
     private javax.swing.JMenuItem Expand;
     private javax.swing.JMenu File;
