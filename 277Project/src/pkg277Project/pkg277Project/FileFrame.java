@@ -11,7 +11,7 @@ public class FileFrame extends JInternalFrame{
     JSplitPane splitpane;
     String name;
     public FileFrame(){
-        splitpane = new JSplitPane();
+        splitpane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, new DirPanel(), new FilePanel());
         this.setTitle("C:");
         this.setSize(400, 400);
         this.getContentPane().add(splitpane);
