@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch getDrives",
+            "request": "launch",
+            "mainClass": "pkg277Project.getDrives",
+            "projectName": "277Project_84272402"
+        },
+        {
+            "type": "java",
+            "name": "Launch GUI",
+            "request": "launch",
+            "mainClass": "pkg277Project.GUI",
+            "projectName": "277Project_84272402"
+        },
+        {
+            "type": "java",
+            "name": "Launch newTree",
+            "request": "launch",
+            "mainClass": "pkg277Project.newTree",
+            "projectName": "277Project_84272402"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

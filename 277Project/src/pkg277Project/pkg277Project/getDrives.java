@@ -1,17 +1,15 @@
 package pkg277Project;
 import java.io.*;
-import java.util.ArrayList;
 
 public class getDrives {
     
-    public static ArrayList<File> allDrives() {
-        ArrayList<File> drives = new ArrayList<File>();
+    public static void main(String[] args) {
+
         File[] paths;
         // number of dropdown items (items 1-4 etc.) = paths.length
         paths = File.listRoots();
-        for(int i = 0; i < paths.length; i++) {
-            drives.add(paths[i]);
+        for(File path : paths) {
+            System.out.println(path);
         }
-        return drives;
     }
 }

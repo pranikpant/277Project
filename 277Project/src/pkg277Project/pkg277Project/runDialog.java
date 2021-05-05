@@ -41,6 +41,9 @@ public class runDialog extends javax.swing.JDialog {
                 runActionPerformed(evt);
             }
         });
+        String driveName = "C:\\";
+
+        text.setText(driveName);
 
         jLabel2.setText("Run:");
 
