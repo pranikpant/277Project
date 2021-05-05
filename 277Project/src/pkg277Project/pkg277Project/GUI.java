@@ -58,7 +58,14 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Item 1"}));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {""}));
+
+        final getDrives gd= new getDrives();
+        String[] array;
+        for(int i = 0; i < array.length; i++){
+            jComboBox2.addItem(array[i]);
+        }
+        
 
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
