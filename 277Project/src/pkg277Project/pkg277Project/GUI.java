@@ -8,8 +8,8 @@ package pkg277Project;
 import java.io.*;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
-
 import java.net.URI;
+import java.util.ArrayList;
 
 
 /**
@@ -61,11 +61,10 @@ public class GUI extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {""}));
 
         final getDrives gd= new getDrives();
-        String[] array;
-        for(int i = 0; i < array.length; i++){
-            jComboBox2.addItem(array[i]);
+        ArrayList<java.io.File> ad = gd.allDrives();
+        for (int i = 0; i < ad.size(); i++) {
+            jComboBox2.addItem(ad.get(i));
         }
-        
 
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
