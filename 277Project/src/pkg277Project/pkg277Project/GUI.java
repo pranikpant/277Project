@@ -67,11 +67,16 @@ public class GUI extends javax.swing.JFrame {
         for (int i = 0; i < ad.size(); i++) {
             jComboBox2.addItem(ad.get(i));
         }
+        /*
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
+        */
+        String driveSelection = (String) jComboBox2.getSelectedItem();
+        System.out.println(driveSelection);
+
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
