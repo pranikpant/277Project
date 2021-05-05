@@ -1,6 +1,7 @@
 package pkg277Project;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.SwingUtilities;
@@ -17,9 +18,10 @@ public class newTree implements Runnable{
 
     
     public void run(){
-        //FileFrame frame = new FileFrame("C:\\");
+        //FileFrame frame = new FileFrame();
         JFrame frame = new JFrame("C:\\");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //final DirPanel frame = new DirPanel();
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         File fileRoot = new File("C:\\");
         root = new DefaultMutableTreeNode(new fileNode(fileRoot));
@@ -39,6 +41,6 @@ public class newTree implements Runnable{
     }
 
     public static void main (String[] args) {
-        SwingUtilities.invokeLater(new newTree());
+       SwingUtilities.invokeLater(new newTree());
     }
 }
