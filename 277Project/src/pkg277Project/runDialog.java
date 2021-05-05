@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg277Project.pkg277Project;
+package pkg277Project;
+
+import pkg277Project.fileRun;
 
 /**
  *
@@ -41,10 +43,6 @@ public class runDialog extends javax.swing.JDialog {
                 runActionPerformed(evt);
             }
         });
-
-        String driveName = "C:\\";
-
-        text.setText(driveName);
 
         jLabel2.setText("Run:");
 
