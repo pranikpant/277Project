@@ -30,4 +30,14 @@ public class createChildren implements Runnable {
             }
         }
     }
+    private void dontCare(File file, DefaultMutableTreeNode node){
+        File[] files = file.listFiles();
+        if (files == null) {
+            return;
+        }
+        for (int i = 0; i < files.length; i++) {
+            DefaultMutableTreeNode childNode = new DefaultMutableTreeNode(new fileNode(files[i]));
+            node.add(childNode); 
+        }
+    }
 }

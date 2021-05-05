@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch directoryRead",
+            "request": "launch",
+            "mainClass": "pkg277Project.directoryRead",
+            "projectName": "277Project_84272402"
+        },
+        {
+            "type": "java",
+            "name": "Launch copyingDialog",
+            "request": "launch",
+            "mainClass": "pkg277Project.copyingDialog",
+            "projectName": "277Project_84272402"
+        },
+        {
+            "type": "java",
             "name": "Launch getDrives",
             "request": "launch",
             "mainClass": "pkg277Project.getDrives",

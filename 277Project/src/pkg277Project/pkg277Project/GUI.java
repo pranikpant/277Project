@@ -70,7 +70,9 @@ public class GUI extends javax.swing.JFrame {
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 finalDrive = (String) jComboBox2.getSelectedItem();
-
+                File drive = new File(finalDrive);
+                DriveSpace.setText("Current Drive: " + finalDrive + "    Free Space: " + drive.getFreeSpace()/1000000000 + " GB" + "    Used Space: " + (drive.getTotalSpace()-drive.getFreeSpace())/1000000000 + " GB" 
+                + "    Total Space: " + drive.getTotalSpace()/1000000000 + " GB");
                 //jCombobox2ActionPerformed(evt);
                 System.out.println(finalDrive);
                 //return driveSelection;
@@ -289,7 +291,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void NewActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        final FileFrame IF=new FileFrame();
+        final FileFrame IF=new FileFrame(finalDrive);
         mydesktop.add(IF);
         //final newTree nt=new newTree();
         //nt.run();  

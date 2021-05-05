@@ -10,21 +10,23 @@ import javax.swing.tree.DefaultTreeModel;
 
 import java.io.*;
 
-public class newTree implements Runnable{
+public class newTree {
     
     private DefaultMutableTreeNode root;
     private DefaultTreeModel treemodel;
     private JTree tree;
     private JPanel panel = new JPanel();
+    private JPanel rightPanel = new JPanel();
+    private String path = "C:\\";
 
     
-    public void run(){
+    public void run(){ 
         //FileFrame frame = new FileFrame();
         //JFrame frame = new JFrame("C:\\");
         //final DirPanel frame = new DirPanel();
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        File fileRoot = new File("C:\\");
+        File fileRoot = new File(path);
         root = new DefaultMutableTreeNode(new fileNode(fileRoot));
         treemodel = new DefaultTreeModel(root);
 
@@ -42,6 +44,16 @@ public class newTree implements Runnable{
     }
     public JPanel getTree(){
         return this.panel;
+    }
+    public String getPath(){
+        return this.path;
+    }
+    public void setPath(String newPath){
+        this.path = newPath;
+    }
+    public JPanel directoryRead(){
+        
+        return this.rightPanel;
     }
 
     //public static void main (String[] args) {

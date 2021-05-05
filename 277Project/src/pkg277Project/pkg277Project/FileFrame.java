@@ -10,11 +10,12 @@ import javax.swing.JInternalFrame;
 public class FileFrame extends JInternalFrame{
     JSplitPane splitpane;
     String name;
-    public FileFrame(){
+    public FileFrame(String driveName){
         final newTree nt= new newTree();
+        nt.setPath(driveName);
         nt.run();
         this.splitpane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, nt.getTree(), new FilePanel());
-        this.setTitle("C:");
+        this.setTitle(driveName);
         this.setSize(400, 400);
         this.getContentPane().add(splitpane);
         this.setClosable(true);
