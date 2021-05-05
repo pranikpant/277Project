@@ -67,15 +67,12 @@ public class GUI extends javax.swing.JFrame {
         for (int i = 0; i < ad.size(); i++) {
             jComboBox2.addItem(ad.get(i));
         }
-        /*
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jCombobox2ActionPerformed(evt);
             }
         });
-        */
-        String driveSelection = (String) jComboBox2.getSelectedItem();
-        System.out.println(driveSelection);
+        
 
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
@@ -276,11 +273,13 @@ public class GUI extends javax.swing.JFrame {
 
     private void CollapseActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    } 
+    private void jCombobox2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-
-    }                                          
+        String driveSelection = (String) jComboBox2.getSelectedItem();
+        System.out.println(driveSelection);
+        
+    }                                         
 
     private void NewActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:

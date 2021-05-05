@@ -18,8 +18,8 @@ public class newTree implements Runnable{
 
     
     public void run(){
-        //FileFrame frame = new FileFrame();
-        JFrame frame = new JFrame("C:\\");
+        FileFrame frame = new FileFrame();
+        //JFrame frame = new JFrame("C:\\");
         //final DirPanel frame = new DirPanel();
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
