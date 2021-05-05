@@ -1,4 +1,4 @@
-package pkg277Project.pkg277Project;
+package pkg277Project
 
 import java.io.*;
 import java.text.SimpleDateFormat;
