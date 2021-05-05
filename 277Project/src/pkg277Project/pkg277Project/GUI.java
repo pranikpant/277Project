@@ -6,6 +6,8 @@
 package pkg277Project;
 
 import java.io.*;
+
+import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import java.net.URI;
@@ -58,14 +60,17 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {""}));
-
         final getDrives gd= new getDrives();
-        ArrayList<java.io.File> ad = gd.allDrives();
+        ArrayList<String> ad = gd.allDrives();
         for (int i = 0; i < ad.size(); i++) {
+            System.out.println(ad.get(i));
             jComboBox2.addItem(ad.get(i));
         }
-
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
         Details.setText("Details");
         Details.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,7 +266,10 @@ public class GUI extends javax.swing.JFrame {
 
     private void CollapseActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }                                        
+    }
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                          
 
     private void NewActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:

@@ -10,7 +10,7 @@ public class getDrives {
         // number of dropdown items (items 1-4 etc.) = paths.length
         paths = File.listRoots();
         for(int i = 0; i < paths.length; i++){
-            drives.add(paths[i].getName());
+            drives.add(paths[i].getPath());
         }
         return drives;
     }   
