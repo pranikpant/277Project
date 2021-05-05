@@ -9,6 +9,7 @@ import java.io.*;
 
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import java.net.URI;
 import java.util.ArrayList;
@@ -57,13 +58,13 @@ public class GUI extends javax.swing.JFrame {
         Help = new javax.swing.JMenu();
         Help_item = new javax.swing.JMenuItem();
         About = new javax.swing.JMenuItem();
+        JMenuBar gap = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         final getDrives gd= new getDrives();
         ArrayList<String> ad = gd.allDrives();
         for (int i = 0; i < ad.size(); i++) {
-            System.out.println(ad.get(i));
             jComboBox2.addItem(ad.get(i));
         }
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +80,8 @@ public class GUI extends javax.swing.JFrame {
         });
 
         Simple.setText("Simple");
+        
+        
 
         mydesktop.setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mydesktop.setLayer(Details, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -96,15 +99,17 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Simple)
                 .addContainerGap(135, Short.MAX_VALUE))
+                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         mydesktopLayout.setVerticalGroup(
             mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mydesktopLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Details)
-                    .addComponent(Simple))
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Details)
+                .addComponent(Simple))
+                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(411, Short.MAX_VALUE))
         );
         // using C: drive for example
@@ -269,6 +274,7 @@ public class GUI extends javax.swing.JFrame {
     }
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+
     }                                          
 
     private void NewActionPerformed(java.awt.event.ActionEvent evt) {                                         
