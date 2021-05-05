@@ -274,8 +274,9 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
     //combo box drive selection 
-    private String jComboBox2ActionPerformed(JComboBox<String> driveSelection) {                                         
-        return driveSelection.getSelectedItem();
+    
+    private void jComboBox2ActionPerformed(JComboBox<String> driveSelection) {                                         
+        //return driveSelection.getSelectedItem();
     }                                          
 
     private void NewActionPerformed(java.awt.event.ActionEvent evt) {                                         
