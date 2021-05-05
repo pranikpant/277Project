@@ -131,6 +131,11 @@ public class GUI extends javax.swing.JFrame {
         File.add(Run);
 
         Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
         File.add(Exit);
 
         jMenuBar1.add(File);
@@ -213,18 +218,22 @@ public class GUI extends javax.swing.JFrame {
         
     }
     
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        dispose();
+    }
+    
     private void CopyActionPerformed(java.awt.event.ActionEvent evt){
         new copyingDialog(null,true).show(); 
     }
     
     private void RenameActionPerformed(java.awt.event.ActionEvent evt){
-        new copyingDialog(null,true).show(); 
+        new renameDialog(null,true).show(); 
     }
 
     private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
         // TODO add your handling code here:
-        final fileRun file= new fileRun();
-        
+        new runDialog(null,true).show();  
     }//GEN-LAST:event_RunActionPerformed
 
     private void Help_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
