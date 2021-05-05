@@ -17,6 +17,7 @@ public class createChildren implements Runnable {
         createChildrenNodes(file, root);
     }
 
+
     private void createChildrenNodes(File file, DefaultMutableTreeNode node) {
         File[] files = file.listFiles();
         if (files == null) {
@@ -30,7 +31,12 @@ public class createChildren implements Runnable {
             }
         }
     }
-    private void dontCare(File file, DefaultMutableTreeNode node){
+    //@Override
+    public void create(){
+        createAllNodes(file, root);
+    }
+
+    private void createAllNodes(File file, DefaultMutableTreeNode node){
         File[] files = file.listFiles();
         if (files == null) {
             return;
