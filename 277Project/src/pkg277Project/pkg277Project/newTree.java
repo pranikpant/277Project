@@ -15,10 +15,11 @@ public class newTree implements Runnable{
     private DefaultMutableTreeNode root;
     private DefaultTreeModel treemodel;
     private JTree tree;
+    private JPanel panel = new JPanel();
 
     
     public void run(){
-        FileFrame frame = new FileFrame();
+        //FileFrame frame = new FileFrame();
         //JFrame frame = new JFrame("C:\\");
         //final DirPanel frame = new DirPanel();
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,16 +32,19 @@ public class newTree implements Runnable{
         tree.setShowsRootHandles(true);
         JScrollPane scrollPane = new JScrollPane(tree);
 
-        frame.add(scrollPane);
+        this.panel.add(scrollPane);
         //frame.setLocationByPlatform(true);
-        frame.setSize(640, 480);
-        frame.setVisible(true);
+        this.panel.setSize(1000, 1000);
+        this.panel.setVisible(true);
 
         createChildren cc = new createChildren(fileRoot, root);
         new Thread(cc).start();
     }
-
-    public static void main (String[] args) {
-       SwingUtilities.invokeLater(new newTree());
+    public JPanel getTree(){
+        return this.panel;
     }
+
+    //public static void main (String[] args) {
+    //   SwingUtilities.invokeLater(new newTree());
+    //}
 }
