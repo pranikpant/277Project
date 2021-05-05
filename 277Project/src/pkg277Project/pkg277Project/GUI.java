@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg277Project;
+package pkg277Project.pkg277Project;
 
 import java.io.*;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import java.net.URI;
+
 
 /**
  *
@@ -102,9 +104,19 @@ public class GUI extends javax.swing.JFrame {
         File.setText("File");
 
         Rename.setText("Rename");
+        Rename.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RenameActionPerformed(evt);
+            }
+        });
         File.add(Rename);
 
         Copy.setText("Copy");
+        Copy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CopyActionPerformed(evt);
+            }
+        });
         File.add(Copy);
 
         Delete.setText("Delete");
@@ -154,13 +166,14 @@ public class GUI extends javax.swing.JFrame {
         jMenuBar1.add(Window);
 
         Help.setText("Help");
-        Help.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HelpActionPerformed(evt);
-            }
-        });
+        
 
         Help_item.setText("Help");
+        Help_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Help_itemActionPerformed(evt);
+            }
+        });
         Help.add(Help_item);
 
         About.setText("About");
@@ -198,14 +211,31 @@ public class GUI extends javax.swing.JFrame {
     private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         
-    }                                       
+    }
+    
+    private void CopyActionPerformed(java.awt.event.ActionEvent evt){
+        new copyingDialog(null,true).show(); 
+    }
+    
+    private void RenameActionPerformed(java.awt.event.ActionEvent evt){
+        new copyingDialog(null,true).show(); 
+    }
 
     private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
         // TODO add your handling code here:
+        final fileRun file= new fileRun();
+        
     }//GEN-LAST:event_RunActionPerformed
 
-    private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
+    private void Help_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
         // TODO add your handling code here:
+                try {
+                    java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+                    URI oURL = new URI("https://www.youtube.com/watch?v=tqUAE0o46lw");
+                    desktop.browse(oURL);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
     }//GEN-LAST:event_HelpActionPerformed
 
     private void AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutActionPerformed

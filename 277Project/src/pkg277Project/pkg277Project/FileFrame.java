@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg277Project;
+package pkg277Project.pkg277Project;
 
 import javax.swing.JSplitPane;
 import javax.swing.JInternalFrame;
@@ -28,5 +28,5 @@ public class FileFrame extends JInternalFrame{
         
         
     }
-            
+     
 }
