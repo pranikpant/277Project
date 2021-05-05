@@ -12,6 +12,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
 public class DirPanel extends JPanel{
+    private DefaultMutableTreeNode dir;
+    private DefaultTreeModel treemodel;
     private JScrollPane scrollPane = new JScrollPane();
     private JTree dirTree = new JTree();
     private FilePanel filePanel;
@@ -20,7 +22,7 @@ public class DirPanel extends JPanel{
     String path;
 
     public DirPanel(String path) {
-        this.path = path; 
+        setPath(path); 
         GroupLayout layout = new GroupLayout (this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -31,27 +33,32 @@ public class DirPanel extends JPanel{
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
+        buildTree(path);
         add(dirTree);
+        dirTree.setVisible(true);
         //dirTree.addTreeSelectionListener(new MyTreeSelectionListener());
         add(scrollPane);
         scrollPane.setViewportView(dirTree);
-        buildTree();
+        
     }
 
-    public void buildTree(){
+    public void buildTree(String path){
         System.out.println(path);
-        File fileRoot = new File(this.getPath());
-        DefaultMutableTreeNode dir = new DefaultMutableTreeNode(new fileNode(fileRoot));
-        DefaultTreeModel treemodel = new DefaultTreeModel(dir);
+        File fileRoot = new File(path);
+        dir = new DefaultMutableTreeNode(new fileNode(fileRoot));
+        treemodel = new DefaultTreeModel(dir);
 
-        JTree tree = new JTree(treemodel);
-        tree.setShowsRootHandles(true);
+        dirTree = new JTree(treemodel);
+        dirTree.setShowsRootHandles(true);
 
         createChildren cc = new createChildren(fileRoot, dir);
         new Thread(cc).start();
     }
     public String getPath(){
         return this.path;
+    }
+    public void setPath(String newPath){
+        this.path = newPath;
     }
 
     public void setFilePanel(FilePanel fp) {
