@@ -69,9 +69,15 @@ public class GUI extends javax.swing.JFrame {
         }
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCombobox2ActionPerformed(evt);
+                finalDrive = (String) jComboBox2.getSelectedItem();
+
+                //jCombobox2ActionPerformed(evt);
+                System.out.println(finalDrive);
+                //return driveSelection;
             }
         });
+        
+        //System.out.println(finalDrive);
         
 
         Details.setText("Details");
@@ -115,9 +121,9 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(411, Short.MAX_VALUE))
         );
         // using C: drive for example
-        String driveName = "C:\\";
-        File drive = new File(driveName);
-        DriveSpace.setText("Current Drive: " + driveName + "    Free Space: " + drive.getFreeSpace()/1000000000 + " GB" + "    Used Space: " + (drive.getTotalSpace()-drive.getFreeSpace())/1000000000 + " GB" 
+        //String driveName = "C:\\";
+        File drive = new File(finalDrive);
+        DriveSpace.setText("Current Drive: " + finalDrive + "    Free Space: " + drive.getFreeSpace()/1000000000 + " GB" + "    Used Space: " + (drive.getTotalSpace()-drive.getFreeSpace())/1000000000 + " GB" 
         + "    Total Space: " + drive.getTotalSpace()/1000000000 + " GB");
 
         File.setText("File");
@@ -276,8 +282,8 @@ public class GUI extends javax.swing.JFrame {
     } 
     private void jCombobox2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        String driveSelection = (String) jComboBox2.getSelectedItem();
-        System.out.println(driveSelection);
+        finalDrive = (String) jComboBox2.getSelectedItem();
+        //return driveSelection;
         
     }                                         
 
@@ -346,5 +352,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane mydesktop;
+    public String finalDrive = "C:\\";
     // End of variables declaration//GEN-END:variables
 }
