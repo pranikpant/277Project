@@ -17,7 +17,8 @@ public class directoryRead {
             if (files[i].isDirectory()) {
                 System.out.println("Directory:" + files[i].getAbsolutePath() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
             } else {
-                System.out.println("File:" + files[i].getAbsolutePath() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
+                //System.out.println("File:" + files[i].getAbsolutePath() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
+                continue;
             }
         }
     }

@@ -8,6 +8,8 @@ package pkg277Project;
 import java.io.*;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -93,12 +95,13 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(Simple))
                 .addContainerGap(411, Short.MAX_VALUE))
         );
-        // using C: drive for example
+        // using C: drive for example -> replace C:\\ with whatever the variable is
         String driveName = "C:\\";
         File drive = new File(driveName);
         DriveSpace.setText("Current Drive: " + driveName + "    Free Space: " + drive.getFreeSpace()/1000000000 + " GB" + "    Used Space: " + (drive.getTotalSpace()-drive.getFreeSpace())/1000000000 + " GB" 
         + "    Total Space: " + drive.getTotalSpace()/1000000000 + " GB");
-
+        
+        
         File.setText("File");
 
         Rename.setText("Rename");
@@ -194,6 +197,7 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
