@@ -5,8 +5,6 @@
  */
 package pkg277Project;
 
-import pkg277Project.fileRun;
-
 /**
  *
  * @author ianbw
