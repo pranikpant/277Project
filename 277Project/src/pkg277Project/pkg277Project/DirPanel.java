@@ -83,11 +83,7 @@ public class DirPanel extends JPanel{
             
             DefaultMutableTreeNode node = (DefaultMutableTreeNode)dirTree.getLastSelectedPathComponent();
             System.out.println(node.toString());
-            //String dirPath = "";
-            //TreePath[] paths = e.getPath();
-            //for (int i = 0; i < paths.length; i++){
 
-            //}
             fileNode fNode = (fileNode)node.getUserObject();
             File file = fNode.getFile();
             if (!node.toString().equals(null)) {
