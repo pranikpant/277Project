@@ -10,6 +10,7 @@ package pkg277Project;
  * @author ianbw
  */
 public class runDialog extends javax.swing.JDialog {
+    private String driveName;
 
     /**
      * Creates new form runDialog
@@ -38,12 +39,10 @@ public class runDialog extends javax.swing.JDialog {
         run.setText("Run");
         run.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                driveName = text.getText();
                 runActionPerformed(evt);
             }
         });
-        String driveName = "C:\\";
-
-        text.setText(driveName);
 
         jLabel2.setText("Run:");
 
@@ -76,7 +75,10 @@ public class runDialog extends javax.swing.JDialog {
 
     private void runActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runActionPerformed
         // TODO add your handling code here:
-        final fileRun fr=new fileRun();
+        System.out.println(driveName);
+        final fileRun fr=new fileRun(driveName);
+        fr.run();
+        dispose();
         
     }//GEN-LAST:event_runActionPerformed
 

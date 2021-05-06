@@ -12,6 +12,7 @@ public class fileRun extends GUI {
     }
 
     public void run() {
+        System.out.println(file);
 
         Desktop desktop = Desktop.getDesktop();
         

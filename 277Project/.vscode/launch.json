@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch runDialog",
+            "request": "launch",
+            "mainClass": "pkg277Project.runDialog",
+            "projectName": "277Project_84272402"
+        },
+        {
+            "type": "java",
             "name": "Launch directoryRead",
             "request": "launch",
             "mainClass": "pkg277Project.directoryRead",
