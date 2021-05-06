@@ -28,4 +28,7 @@ public class fileNode {
         }
 
     }
+    public File getFile(){
+        return file;
+    }
 }

@@ -87,8 +87,11 @@ public class DirPanel extends JPanel{
             //for (int i = 0; i < paths.length; i++){
 
             //}
+            fileNode fNode = (fileNode)node.getUserObject();
+            File file = fNode.getFile();
             if (!node.toString().equals(null)) {
-                filePanel.fillList(new File("C:\\Users\\Pranik\\Pictures\\Camera Roll"));
+                //System.out.println(file.toString());
+                filePanel.fillList(new File(file.toString()));
             }
         }
 
