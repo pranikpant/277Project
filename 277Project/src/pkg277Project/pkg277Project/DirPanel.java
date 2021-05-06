@@ -13,6 +13,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 public class DirPanel extends JPanel{
+    private static final DefaultMutableTreeNode File = null;
     private DefaultMutableTreeNode dir;
     private DefaultTreeModel treemodel;
     private JScrollPane scrollPane = new JScrollPane();
@@ -20,6 +21,7 @@ public class DirPanel extends JPanel{
     private FilePanel filePanel;
     File rootFile;
     String path;
+    private renameDialog rd;
 
     public DirPanel(String path) {
         setPath(path); 
@@ -88,6 +90,7 @@ public class DirPanel extends JPanel{
             if (!node.toString().equals(null)) {
                 System.out.println(file.toString());
                 filePanel.fillList(new File(file.toString()));
+                rd.getPath(file.toString());
             }
         }
         
