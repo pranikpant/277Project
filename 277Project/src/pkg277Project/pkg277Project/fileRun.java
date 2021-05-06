@@ -5,12 +5,18 @@ import java.io.*;
 
 public class fileRun extends GUI {
     
-    public static void main(String[] args, String str) {
+    String file;
+
+    public fileRun(String file){
+        this.file = file;
+    }
+
+    public void run() {
 
         Desktop desktop = Desktop.getDesktop();
         
         try {
-            desktop.open(new File(str));
+            desktop.open(new File(file));
         } catch (IOException ex) {
             System.out.println(ex.toString());
         }
