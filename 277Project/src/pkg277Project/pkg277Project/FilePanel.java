@@ -18,8 +18,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.GroupLayout;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 
 /**
@@ -28,20 +30,33 @@ import javax.swing.JPanel;
  */
 
 public class FilePanel extends JPanel {
-    /*
+    
     JList list = new JList();
     DefaultListModel model = new DefaultListModel<>();
+    private JScrollPane scrollPane = new JScrollPane();
     //DefaultListModel model = new DefaultListModel();
     
     public FilePanel(){
-        list.setPreferredSize(new Dimension(500,500));
+        //list.setPreferredSize(new Dimension(500,500));
+        
         this.setDropTarget(new MyDropTarget());
         list.setDragEnabled(true);
-
         list.setModel(model);
+        GroupLayout layout = new GroupLayout (this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
         add(list);
+        add(scrollPane);
+        scrollPane.setViewportView(list);
     }
-    */
+    
     
     public void fillList(File dir) {
         File[] files;
