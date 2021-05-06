@@ -79,7 +79,6 @@ public class DirPanel extends JPanel{
 
         @Override
         public void valueChanged(TreeSelectionEvent e) {
-            //System.out.println(e.getPath());
             
             DefaultMutableTreeNode node = (DefaultMutableTreeNode)dirTree.getLastSelectedPathComponent();
             System.out.println(node.toString());
@@ -87,7 +86,6 @@ public class DirPanel extends JPanel{
             fileNode fNode = (fileNode)node.getUserObject();
             File file = fNode.getFile();
             if (!node.toString().equals(null)) {
-                //System.out.println(file.toString());
                 filePanel.fillList(new File(file.toString()));
             }
         }

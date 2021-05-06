@@ -60,9 +60,6 @@ public class FilePanel extends JPanel {
     
     public void fillList(File dir) {
         File[] files;
-        if (files == null) {
-            return;
-        }
         files = dir.listFiles();
         model.clear();
         list.removeAll();
