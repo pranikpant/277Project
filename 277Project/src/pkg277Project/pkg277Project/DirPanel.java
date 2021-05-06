@@ -10,6 +10,7 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 
 public class DirPanel extends JPanel{
     private DefaultMutableTreeNode dir;
@@ -17,7 +18,6 @@ public class DirPanel extends JPanel{
     private JScrollPane scrollPane = new JScrollPane();
     private JTree dirTree = new JTree();
     private FilePanel filePanel;
-    FileManagerFrame myFrame;
     File rootFile;
     String path;
 
@@ -36,7 +36,7 @@ public class DirPanel extends JPanel{
         buildTree(path);
         add(dirTree);
         dirTree.setVisible(true);
-        //dirTree.addTreeSelectionListener(new MyTreeSelectionListener());
+        dirTree.addTreeSelectionListener(new MyTreeSelectionListener());
         add(scrollPane);
         scrollPane.setViewportView(dirTree);
         
@@ -73,28 +73,24 @@ public class DirPanel extends JPanel{
     public JTree getDirTree() {
         return dirTree;
     }
-
+    
     class MyTreeSelectionListener implements TreeSelectionListener {
 
         @Override
         public void valueChanged(TreeSelectionEvent e) {
-            System.out.println(e.getPath());
             
-            DefaultMutableTreeNode node = (DefaultMutableTreeNode) dirTree.getLastSelectedPathComponent();
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode)dirTree.getLastSelectedPathComponent();
             System.out.println(node.toString());
-            //String dirPath = "";
-            //TreePath[] paths = e.getPath();
-            //for (int i = 0; i < paths.length; i++){
 
             //}
             fileNode fNode = (fileNode)node.getUserObject();
             File file = fNode.getFile();
             if (!node.toString().equals(null)) {
-                //System.out.println(file.toString());
+                System.out.println(file.toString());
                 filePanel.fillList(new File(file.toString()));
             }
         }
-
         
     }
+    
 }

@@ -18,6 +18,10 @@ public class fileNode {
     public boolean isDirectory(){
         return file.isDirectory();
     }
+    
+    public File getFile() {
+        return file;
+    }
     @Override
     public String toString(){
         String name = file.getName();
@@ -27,8 +31,5 @@ public class fileNode {
             return name;
         }
 
-    }
-    public File getFile(){
-        return file;
     }
 }
