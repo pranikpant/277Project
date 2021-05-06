@@ -14,10 +14,6 @@ public class fileNode {
         fileName = name;
         file = f;
     }
-    // new 
-    public File getFile(){
-        return file;
-    }
 
     public boolean isDirectory(){
         return file.isDirectory();
