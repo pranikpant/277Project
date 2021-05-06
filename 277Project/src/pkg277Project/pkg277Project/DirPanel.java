@@ -73,15 +73,17 @@ public class DirPanel extends JPanel{
     public JTree getDirTree() {
         return dirTree;
     }
-    /*
+
     class MyTreeSelectionListener implements TreeSelectionListener {
 
         @Override
         public void valueChanged(TreeSelectionEvent e) {
             System.out.println(e.getPath());
             
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode) dirTree.getLastSelectedPathComponent();
+            System.out.println(node.toString());
         }
+
         
     }
-    */
 }
