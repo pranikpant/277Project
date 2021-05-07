@@ -86,11 +86,7 @@ public class renameDialog extends javax.swing.JDialog {
 
         jLabel3.setText("To:");
 
-        if(dir != null){
-            jLabel1.setText("Current Directory: "+ this.getDir());
-        }else{
-            jLabel1.setText("Current Directory: "+ this.getDrive());
-        }
+        jLabel1.setText("Current Directory: "+ this.getDrive());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

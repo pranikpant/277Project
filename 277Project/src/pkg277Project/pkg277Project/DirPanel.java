@@ -54,16 +54,20 @@ public class DirPanel extends JPanel{
                 File file = fNode.getFile();
                 if (!node.toString().equals(null)) {
                     System.out.println(file.toString());
-                    ff.setTitle(file.toString());
-                    //FileFrame.setName(file.toString());
-                    filePanel.setPath(file.toString());
-                    filePanel.fillList(new File(file.toString()));
-                    //rd.getPath(file.toString());
+                    String filepath = file.toString();
+                    setPath(filepath);
+                    ff.setTitle(filepath);
+                    filePanel.setPath(filepath);
+                    filePanel.fillList(new File(filepath));
                 }
             }
         });
 
         
+    }
+
+    public boolean exists(){
+        return dirTree.isVisible();
     }
 
     public void buildTree(String path){

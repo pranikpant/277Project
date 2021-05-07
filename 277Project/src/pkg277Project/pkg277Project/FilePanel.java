@@ -25,6 +25,7 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.JList;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -91,7 +92,26 @@ public class FilePanel extends JPanel {
                     }
                 }
                 if (SwingUtilities.isRightMouseButton(evt) ){
-                    System.out.println("Right CLick");
+                    
+                    int index = theList.locationToIndex(evt.getPoint());
+                    Object o = theList.getModel().getElementAt(index);
+                    System.out.println("Right CLick on: " + o.toString());
+                    JPopupMenu popup = new JPopupMenu();
+                    // add menu items to popup
+                    JMenuItem cut = new JMenuItem("Cut");
+                    JMenuItem copy = new JMenuItem("Copy");
+                    JMenuItem paste = new JMenuItem("Paste");
+                    JMenuItem delete = new JMenuItem("Delete");
+                    popup.add(cut);
+                    popup.add(copy);
+                    popup.add(paste);
+                    popup.addSeparator();
+                    popup.add(delete);
+                    popup.setSize(250, 175);
+                    setVisible(true);
+                    popup.show(FilePanel.this, 5, list.getCellBounds(
+                        list.getSelectedIndex() + 1,
+                        list.getSelectedIndex() + 1).y);
                     //list.add(popup);
                     //list.setSelectedIndex(getRow(e.getPoint()));
                 }

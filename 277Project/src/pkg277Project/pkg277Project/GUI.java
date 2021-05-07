@@ -21,6 +21,7 @@ import java.util.ArrayList;
  */
 public class GUI extends javax.swing.JFrame {
     private renameDialog rd;
+    private DirPanel dir;
 
     /**
      * Creates new form GUI
@@ -282,7 +283,15 @@ public class GUI extends javax.swing.JFrame {
     }
     
     private void RenameActionPerformed(java.awt.event.ActionEvent evt){
-        new renameDialog(null,true,finalDrive).show(); 
+        String drive;
+        if (dir == null) {
+            drive = finalDrive;
+        } else {
+            System.out.println("hello");
+            drive = dir.getPath();
+        }
+        System.out.println("vfdiojna");
+        new renameDialog(null,true,drive).show(); 
     }
 
     private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
