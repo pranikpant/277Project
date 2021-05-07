@@ -5,6 +5,7 @@ import java.io.*;
 public class fileNode {
     File file;
     String fileName;
+    Boolean name;
 
     public fileNode(File file) {
         this.file = file;
@@ -31,5 +32,10 @@ public class fileNode {
             return name;
         }
 
+    }
+    public File renameFile(File old, File newN){
+        name = old.renameTo(newN);
+        System.out.println(name.toString());
+        return newN;
     }
 }

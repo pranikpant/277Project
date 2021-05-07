@@ -20,6 +20,7 @@ import java.util.ArrayList;
  * @author ianbw
  */
 public class GUI extends javax.swing.JFrame {
+    private renameDialog rd;
 
     /**
      * Creates new form GUI
@@ -75,6 +76,7 @@ public class GUI extends javax.swing.JFrame {
                 + "    Total Space: " + drive.getTotalSpace()/1000000000 + " GB");
                 //jCombobox2ActionPerformed(evt);
                 System.out.println(finalDrive);
+                
                 //return driveSelection;
             }
         });
