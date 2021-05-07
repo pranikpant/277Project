@@ -35,6 +35,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.event.MouseInputAdapter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -98,27 +99,68 @@ public class FilePanel extends JPanel {
                     System.out.println("Right CLick on: " + o.toString());
                     JPopupMenu popup = new JPopupMenu();
                     // add menu items to popup
-                    JMenuItem cut = new JMenuItem("Cut");
+                    JMenuItem rename = new JMenuItem("Rename");
                     JMenuItem copy = new JMenuItem("Copy");
                     JMenuItem paste = new JMenuItem("Paste");
                     JMenuItem delete = new JMenuItem("Delete");
-                    popup.add(cut);
+
+                    rename.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            renameMenuItem(evt);
+                        }
+                    });
+                    copy.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            copyMenuItem(evt);
+                        }
+                    });
+                    paste.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            pasteMenuItem(evt);
+                        }
+                    });
+                    delete.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            deleteMenuItem(evt);
+                        }
+                    });
+
+                    popup.add(rename);
                     popup.add(copy);
                     popup.add(paste);
                     popup.addSeparator();
                     popup.add(delete);
                     popup.setSize(250, 175);
                     setVisible(true);
-                    popup.show(FilePanel.this, 5, list.getCellBounds(
-                        list.getSelectedIndex() + 1,
-                        list.getSelectedIndex() + 1).y);
-                    //list.add(popup);
-                    //list.setSelectedIndex(getRow(e.getPoint()));
+                    popup.show(FilePanel.this, 5, 3);
                 }
             }
         });         
     }
 
+    private void renameMenuItem (java.awt.event.ActionEvent evt) {     
+        String renamePath = FilePanel.getPath();
+        System.out.println(renamePath);
+        new renameDialog(null,true,renamePath).show();                                   
+        System.out.println("renaming");
+        
+        
+    }
+    private void copyMenuItem (java.awt.event.ActionEvent evt) {                                        
+        System.out.println("copying");
+        
+        
+    }
+    private void pasteMenuItem (java.awt.event.ActionEvent evt) {                                        
+        System.out.println("pasting");
+        
+        
+    }
+    private void deleteMenuItem (java.awt.event.ActionEvent evt) {                                        
+        System.out.println("deleting");
+        
+        
+    }
     public void setPath(String drivepath) {
         path = drivepath;
     }
