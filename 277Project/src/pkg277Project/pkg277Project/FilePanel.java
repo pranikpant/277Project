@@ -26,7 +26,9 @@ import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.MouseInputAdapter;
@@ -47,6 +49,7 @@ public class FilePanel extends JPanel {
     JList list = new JList();
     DefaultListModel model = new DefaultListModel<>();
     private JScrollPane scrollPane = new JScrollPane();
+    private popupMenu popup = new popupMenu(); 
     //DefaultListModel model = new DefaultListModel();
     
     public FilePanel(){
@@ -83,10 +86,14 @@ public class FilePanel extends JPanel {
                         //final fileRun fr=new fileRun(file);
                         //fr.run();
                     }
-                } 
+                }
+                if (SwingUtilities.isRightMouseButton(evt) ){
+                    System.out.println("Right CLick");
+                    //list.add(popup);
+                    //list.setSelectedIndex(getRow(e.getPoint()));
+                }
             }
         });         
-        
     }
     
     
