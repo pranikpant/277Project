@@ -65,7 +65,7 @@ public class FilePanel extends JPanel {
         list.removeAll();
         for(int i=0; i<files.length; i++) {
             if(!files[i].isHidden()) {
-                model.addElement(files[i].getAbsolutePath());
+                model.addElement(files[i].getName());
             }
         }
         list.setModel(model);

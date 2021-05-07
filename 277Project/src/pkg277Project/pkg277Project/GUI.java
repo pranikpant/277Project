@@ -91,7 +91,6 @@ public class GUI extends javax.swing.JFrame {
 
         Simple.setText("Simple");
         
-        
 
         mydesktop.setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mydesktop.setLayer(Details, javax.swing.JLayeredPane.DEFAULT_LAYER);
