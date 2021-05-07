@@ -80,11 +80,15 @@ public class FilePanel extends JPanel {
                     if (index >= 0) {
                         Object o = theList.getModel().getElementAt(index);
                         System.out.println("Double-clicked on: " + o.toString());
+                        File newFile = new File(o.toString());
+                        fileNode file = new fileNode(newFile);
+                        String runPath = file.getFile().getAbsolutePath();
+                        //System.out.println(file.getFile().getAbsolutePath());
                         //Object fNode = ((DefaultMutableTreeNode) o).getUserObject();
                         //System.out.println(fNode.toString());
                         //File file = fNode.getFile();
-                        //final fileRun fr=new fileRun(file);
-                        //fr.run();
+                        final fileRun fr=new fileRun(runPath);
+                        fr.run();
                     }
                 }
                 if (SwingUtilities.isRightMouseButton(evt) ){
