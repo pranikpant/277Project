@@ -99,28 +99,43 @@ public class GUI extends javax.swing.JFrame {
         mydesktop.setLayer(Simple, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout mydesktopLayout = new javax.swing.GroupLayout(mydesktop);
+        javax.swing.GroupLayout menubarLayout = new javax.swing.GroupLayout(gap);
+        gap.setLayout(menubarLayout);
+        menubarLayout.setHorizontalGroup(
+            menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menubarLayout.createSequentialGroup()
+            .addGap(0, 0, 0)
+            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(Details)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(Simple)
+            .addContainerGap(135, Short.MAX_VALUE))    
+        );
+        menubarLayout.setVerticalGroup(
+            menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menubarLayout.createSequentialGroup()
+            .addContainerGap()
+                .addGroup(menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Details)
+                .addComponent(Simple))   
+        ));
+
+
+
+
         mydesktop.setLayout(mydesktopLayout);
         mydesktopLayout.setHorizontalGroup(
             mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mydesktopLayout.createSequentialGroup()
-                .addGap(189, 189, 189)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Details)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Simple)
-                .addContainerGap(135, Short.MAX_VALUE))
-                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+                .addGap(0, 0, 0)
+                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+        ));
         mydesktopLayout.setVerticalGroup(
             mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mydesktopLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(Details)
-                .addComponent(Simple))
-                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(411, Short.MAX_VALUE))
         );
         // using C: drive for example

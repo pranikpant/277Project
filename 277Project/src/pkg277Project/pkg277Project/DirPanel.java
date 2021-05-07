@@ -90,7 +90,7 @@ public class DirPanel extends JPanel{
             if (!node.toString().equals(null)) {
                 System.out.println(file.toString());
                 filePanel.fillList(new File(file.toString()));
-                rd.getPath(file.toString());
+                //rd.getPath(file.toString());
             }
         }
         
