@@ -15,7 +15,11 @@ import java.awt.dnd.DropTarget;
 import java.awt.dnd.DropTargetDropEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.Serializable;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -26,6 +30,7 @@ import javax.swing.JScrollPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.MouseInputAdapter;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -72,10 +77,11 @@ public class FilePanel extends JPanel {
                     if (index >= 0) {
                         Object o = theList.getModel().getElementAt(index);
                         System.out.println("Double-clicked on: " + o.toString());
-
-                        
-                        final fileRun fr=new fileRun((String) o);
-                        fr.run();
+                        //Object fNode = ((DefaultMutableTreeNode) o).getUserObject();
+                        //System.out.println(fNode.toString());
+                        //File file = fNode.getFile();
+                        //final fileRun fr=new fileRun(file);
+                        //fr.run();
                     }
                 } 
             }
