@@ -74,7 +74,6 @@ public class FilePanel extends JPanel {
         scrollPane.setViewportView(list);
         list.addListSelectionListener(new MyListSelectionListener());
         list.addMouseListener(new MouseInputAdapter(){ 
-            //String filePath = this.path;
             public void mouseClicked(MouseEvent evt) {
                 JList<String> theList = (JList) evt.getSource();
                 if (evt.getClickCount() == 2) {
@@ -85,9 +84,7 @@ public class FilePanel extends JPanel {
                         System.out.println("Double-clicked on: " + FilePanel.getPath() + ("\\") + o.toString());
                 
                         String runPath = FilePanel.getPath() + ("\\") + o.toString();
-                        //Object fNode = ((DefaultMutableTreeNode) o).getUserObject();
-                        //System.out.println(fNode.toString());
-                        //File file = fNode.getFile();
+                        
                         final fileRun fr = new fileRun(runPath);
                         fr.run();
                     }
