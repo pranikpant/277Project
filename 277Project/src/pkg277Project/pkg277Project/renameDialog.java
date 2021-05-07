@@ -68,6 +68,11 @@ public class renameDialog extends javax.swing.JDialog {
         });
 
         Cancel.setText("Cancel");
+        Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("From:");
 
