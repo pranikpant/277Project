@@ -38,7 +38,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-
 /**
  *
  * @author Dr. Hoffman
@@ -76,17 +75,19 @@ public class FilePanel extends JPanel {
         list.addMouseListener(new MouseInputAdapter(){ 
             public void mouseClicked(MouseEvent evt) {
                 JList<String> theList = (JList) evt.getSource();
-                if (evt.getClickCount() == 2) {
-                    int index = theList.locationToIndex(evt.getPoint());
-                    if (index >= 0) {
-                        Object o = theList.getModel().getElementAt(index);
-        
-                        System.out.println("Double-clicked on: " + FilePanel.getPath() + ("\\") + o.toString());
-                
-                        String runPath = FilePanel.getPath() + ("\\") + o.toString();
-                        
-                        final fileRun fr = new fileRun(runPath);
-                        fr.run();
+                if (SwingUtilities.isLeftMouseButton(evt) ) {
+                    if (evt.getClickCount() == 2) {
+                        int index = theList.locationToIndex(evt.getPoint());
+                        if (index >= 0) {
+                            Object o = theList.getModel().getElementAt(index);
+            
+                            System.out.println("Double-clicked on: " + FilePanel.getPath() + ("\\") + o.toString());
+                    
+                            String runPath = FilePanel.getPath() + ("\\") + o.toString();
+                            
+                            final fileRun fr = new fileRun(runPath);
+                            fr.run();
+                        }
                     }
                 }
                 if (SwingUtilities.isRightMouseButton(evt) ){
@@ -106,9 +107,7 @@ public class FilePanel extends JPanel {
         return path;
     }
     
-    
     public void fillList(File dir) {
-        this.path = dir.toString();
         File[] files;
         files = dir.listFiles();
         model.clear();
