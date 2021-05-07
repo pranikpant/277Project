@@ -29,6 +29,9 @@ public class createChildren implements Runnable {
             if (files[i].isDirectory()){
                 createChildrenNodes(files[i], childNode);
             }
+            else {
+                continue;
+            }
         }
     }
     //@Override

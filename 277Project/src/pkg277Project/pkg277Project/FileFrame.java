@@ -19,7 +19,7 @@ public class FileFrame extends JInternalFrame{
     //String path;
     
     public FileFrame(String driveName) {
-        DirPanel dirP = new DirPanel(driveName);
+        DirPanel dirP = new DirPanel(driveName, this);
         FilePanel fileP = new FilePanel();
         dirP.setFilePanel(fileP);
         splitpane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, dirP, fileP);

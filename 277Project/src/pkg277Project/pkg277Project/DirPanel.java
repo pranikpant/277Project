@@ -23,7 +23,8 @@ public class DirPanel extends JPanel{
     String path;
     private renameDialog rd;
 
-    public DirPanel(String path) {
+    public DirPanel(String path, FileFrame fileframe) {
+        final FileFrame ff = fileframe;
         setPath(path); 
         GroupLayout layout = new GroupLayout (this);
         this.setLayout(layout);
@@ -38,9 +39,30 @@ public class DirPanel extends JPanel{
         buildTree(path);
         add(dirTree);
         dirTree.setVisible(true);
-        dirTree.addTreeSelectionListener(new MyTreeSelectionListener());
         add(scrollPane);
         scrollPane.setViewportView(dirTree);
+        dirTree.addTreeSelectionListener(new TreeSelectionListener() {
+
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode)dirTree.getLastSelectedPathComponent();
+                System.out.println(node.toString());
+    
+                //}
+                fileNode fNode = (fileNode)node.getUserObject();
+                File file = fNode.getFile();
+                if (!node.toString().equals(null)) {
+                    System.out.println(file.toString());
+                    ff.setTitle(file.toString());
+                    //FileFrame.setName(file.toString());
+                    filePanel.setPath(file.toString());
+                    filePanel.fillList(new File(file.toString()));
+                    //rd.getPath(file.toString());
+                }
+            }
+        });
+
         
     }
 
@@ -75,8 +97,9 @@ public class DirPanel extends JPanel{
     public JTree getDirTree() {
         return dirTree;
     }
-    
+    /*
     class MyTreeSelectionListener implements TreeSelectionListener {
+
 
         @Override
         public void valueChanged(TreeSelectionEvent e) {
@@ -89,11 +112,14 @@ public class DirPanel extends JPanel{
             File file = fNode.getFile();
             if (!node.toString().equals(null)) {
                 System.out.println(file.toString());
+                ff.setTitle(file.toString());
+                //FileFrame.setName(file.toString());
                 filePanel.fillList(new File(file.toString()));
                 //rd.getPath(file.toString());
             }
         }
         
     }
+    */
     
 }

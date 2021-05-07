@@ -50,6 +50,7 @@ public class FilePanel extends JPanel {
     DefaultListModel model = new DefaultListModel<>();
     private JScrollPane scrollPane = new JScrollPane();
     private popupMenu popup = new popupMenu(); 
+    static String path;
     //DefaultListModel model = new DefaultListModel();
     
     public FilePanel(){
@@ -73,21 +74,21 @@ public class FilePanel extends JPanel {
         scrollPane.setViewportView(list);
         list.addListSelectionListener(new MyListSelectionListener());
         list.addMouseListener(new MouseInputAdapter(){ 
+            //String filePath = this.path;
             public void mouseClicked(MouseEvent evt) {
                 JList<String> theList = (JList) evt.getSource();
                 if (evt.getClickCount() == 2) {
                     int index = theList.locationToIndex(evt.getPoint());
                     if (index >= 0) {
                         Object o = theList.getModel().getElementAt(index);
-                        System.out.println("Double-clicked on: " + o.toString());
-                        File newFile = new File(o.toString());
-                        fileNode file = new fileNode(newFile);
-                        String runPath = file.getFile().getAbsolutePath();
-                        //System.out.println(file.getFile().getAbsolutePath());
+        
+                        System.out.println("Double-clicked on: " + FilePanel.getPath() + ("\\") + o.toString());
+                
+                        String runPath = FilePanel.getPath() + ("\\") + o.toString();
                         //Object fNode = ((DefaultMutableTreeNode) o).getUserObject();
                         //System.out.println(fNode.toString());
                         //File file = fNode.getFile();
-                        final fileRun fr=new fileRun(runPath);
+                        final fileRun fr = new fileRun(runPath);
                         fr.run();
                     }
                 }
@@ -99,9 +100,18 @@ public class FilePanel extends JPanel {
             }
         });         
     }
+
+    public void setPath(String drivepath) {
+        path = drivepath;
+    }
+
+    public static String getPath() {
+        return path;
+    }
     
     
     public void fillList(File dir) {
+        this.path = dir.toString();
         File[] files;
         files = dir.listFiles();
         model.clear();
