@@ -8,7 +8,7 @@ package pkg277Project;
 import java.io.File;
 import java.util.ArrayList;
 
-import pkg277Project.DirPanel.MyTreeSelectionListener;
+//import pkg277Project.DirPanel.MyTreeSelectionListener;
 
 /**
  *
@@ -20,23 +20,31 @@ public class renameDialog extends javax.swing.JDialog {
     private String newName;
     private DirPanel dir;
     String path;
-    String finalDrive;
+    static String drivePath;
     /**
      * Creates new form renameDialog
      */
-    public renameDialog(java.awt.Frame parent, boolean modal) {
+    public renameDialog(java.awt.Frame parent, boolean modal, String drive) {
         super(parent, modal);
+        drivePath = drive;
         initComponents();
     }
+    /*
     public void getPath(String address){
         this.path = address;
         System.out.println(path);
     }
-    public void getDrive(String drive){
-        finalDrive = drive;
-        System.out.println(finalDrive);
+    */
+    public String getDrive(){
+        return drivePath;
+        //System.out.println(finalDrive);
             
     }
+    public String getDir(){
+        this.path = dir.getPath();
+        return this.path;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,10 +86,10 @@ public class renameDialog extends javax.swing.JDialog {
 
         jLabel3.setText("To:");
 
-        if(path != null){
-            jLabel1.setText("Current Directory: "+ finalDrive);
+        if(dir != null){
+            jLabel1.setText("Current Directory: "+ this.getDir());
         }else{
-            jLabel1.setText("Current Directory: "+ finalDrive);
+            jLabel1.setText("Current Directory: "+ this.getDrive());
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,7 +181,7 @@ public class renameDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                renameDialog dialog = new renameDialog(new javax.swing.JFrame(), true);
+                renameDialog dialog = new renameDialog(new javax.swing.JFrame(), true, drivePath);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

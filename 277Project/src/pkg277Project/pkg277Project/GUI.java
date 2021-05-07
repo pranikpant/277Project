@@ -282,7 +282,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     private void RenameActionPerformed(java.awt.event.ActionEvent evt){
-        new renameDialog(null,true).show(); 
+        new renameDialog(null,true,finalDrive).show(); 
     }
 
     private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
