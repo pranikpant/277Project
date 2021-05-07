@@ -104,7 +104,7 @@ public class GUI extends javax.swing.JFrame {
         menubarLayout.setHorizontalGroup(
             menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menubarLayout.createSequentialGroup()
-            .addGap(0, 0, 0)
+            .addGap(0, 130, 300)
             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(Details)
@@ -119,24 +119,21 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(Details)
-                .addComponent(Simple))   
+                .addComponent(Simple))
+                .addGap(10)   
         ));
-
-
-
 
         mydesktop.setLayout(mydesktopLayout);
         mydesktopLayout.setHorizontalGroup(
             mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mydesktopLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                
         ));
         mydesktopLayout.setVerticalGroup(
             mydesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mydesktopLayout.createSequentialGroup()
-                .addComponent(gap, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(500, Short.MAX_VALUE))
         );
         // using C: drive for example
         //String driveName = "C:\\";
@@ -209,6 +206,12 @@ public class GUI extends javax.swing.JFrame {
         Window.add(New);
 
         Cascade.setText("Cascade");
+        Cascade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CascadeActionPerformed(evt);
+            }
+        });
+
         Window.add(Cascade);
 
         jMenuBar1.add(Window);
@@ -240,6 +243,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(gap)
             .addComponent(mydesktop)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(DriveSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,6 +252,7 @@ public class GUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(gap)
                 .addComponent(mydesktop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DriveSpace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -258,6 +263,12 @@ public class GUI extends javax.swing.JFrame {
 
     private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
+        
+    }
+
+    private void CascadeActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        
         
     }
     

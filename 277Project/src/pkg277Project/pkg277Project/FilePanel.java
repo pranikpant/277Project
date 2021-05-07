@@ -13,6 +13,7 @@ import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DragSource;
 import java.awt.dnd.DropTarget;
 import java.awt.dnd.DropTargetDropEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +23,13 @@ import javax.swing.GroupLayout;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.MouseInputAdapter;
+import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
 /**
@@ -55,6 +63,24 @@ public class FilePanel extends JPanel {
         add(list);
         add(scrollPane);
         scrollPane.setViewportView(list);
+        list.addListSelectionListener(new MyListSelectionListener());
+        list.addMouseListener(new MouseInputAdapter(){ 
+            public void mouseClicked(MouseEvent evt) {
+                JList<String> theList = (JList) evt.getSource();
+                if (evt.getClickCount() == 2) {
+                    int index = theList.locationToIndex(evt.getPoint());
+                    if (index >= 0) {
+                        Object o = theList.getModel().getElementAt(index);
+                        System.out.println("Double-clicked on: " + o.toString());
+
+                        
+                        final fileRun fr=new fileRun((String) o);
+                        fr.run();
+                    }
+                } 
+            }
+        });         
+        
     }
     
     
@@ -121,5 +147,19 @@ public class FilePanel extends JPanel {
         }
         
     }
+    class MyListSelectionListener implements ListSelectionListener {
 
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+
+            String node = (String) list.getSelectedValue();
+
+            System.out.println(node);
+
+        }
+    }
 }
+
+
+
+

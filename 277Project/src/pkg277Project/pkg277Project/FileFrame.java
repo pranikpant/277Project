@@ -33,6 +33,10 @@ public class FileFrame extends JInternalFrame{
         this.setVisible(true); 
     }
 
+    public void cascadeFrames(){
+        
+    }
+
     /*
     //String name;
     public FileFrame(String driveName){
