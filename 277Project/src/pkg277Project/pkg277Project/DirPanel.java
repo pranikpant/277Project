@@ -61,7 +61,7 @@ public class DirPanel extends JPanel{
                     setPath(filepath);
                     ff.setTitle(filepath);
                     filePanel.setPath(filepath);
-                    filePanel.fillList(new File(filepath));
+                    filePanel.fillList(new File(filepath), true);
                 }
             }
         });

@@ -93,6 +93,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         Simple.setText("Simple");
+        Simple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SimpleActionPerformed(evt);
+            }
+        });
         
 
         mydesktop.setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -269,6 +274,14 @@ public class GUI extends javax.swing.JFrame {
 
     private void DetailsActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
+        FilePanel fp= new FilePanel();
+        fp.fillList(null, true);
+        
+    }
+    private void SimpleActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        FilePanel fp= new FilePanel();
+        fp.fillList(null, false);
         
     }
 

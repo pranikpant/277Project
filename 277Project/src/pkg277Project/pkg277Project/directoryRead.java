@@ -11,15 +11,6 @@ public class directoryRead {
         File[] files;
         files = file.listFiles();
 
-        for (int i = 0; i < files.length; i++) {
-            SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
-            DecimalFormat size = new DecimalFormat("#,###");
-            if (files[i].isDirectory()) {
-                System.out.println("Directory:" + files[i].getAbsolutePath() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
-            } else {
-                //System.out.println("File:" + files[i].getAbsolutePath() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
-                continue;
-            }
-        }
+        
     }
 }   

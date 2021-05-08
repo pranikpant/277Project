@@ -19,6 +19,8 @@ import java.io.FileInputStream;
 import java.io.Serializable;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -192,13 +194,17 @@ public class FilePanel extends JPanel {
         return path;
     }
     
-    public void fillList(File dir) {
+    public void fillList(File dir, boolean details) {
         File[] files;
         files = dir.listFiles();
         model.clear();
         list.removeAll();
         for(int i=0; i<files.length; i++) {
-            if(!files[i].isHidden()) {
+            SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
+            DecimalFormat size = new DecimalFormat("#,###");
+            if(details){
+                model.addElement(files[i].getName() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
+            }else{
                 model.addElement(files[i].getName());
             }
         }
