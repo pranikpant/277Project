@@ -1,6 +1,8 @@
 package pkg277Project;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.GroupLayout;
 import javax.swing.JPanel;
@@ -10,6 +12,7 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
 public class DirPanel extends JPanel{
@@ -125,5 +128,25 @@ public class DirPanel extends JPanel{
         
     }
     */
+    public static void setTreeExpandedState(JTree tree, boolean expanded) {
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getModel().getRoot();
+        setNodeExpandedState(tree, node, expanded);
+    }
+  
+    public static void setNodeExpandedState(JTree tree, TreeNode treeNode2, boolean expanded) {
+        ArrayList<TreeNode> list = (ArrayList<TreeNode>) Collections.list(treeNode2.children());
+        for (TreeNode treeNode : list) {
+            setNodeExpandedState(tree, treeNode, expanded);
+        }
+        if (!expanded && ((DefaultMutableTreeNode) treeNode2).isRoot()) {
+            return;
+        }
+        TreePath path = new TreePath(treeNode2.getParent());
+        if (expanded) {
+            tree.expandPath(path);
+        } else {
+            tree.collapsePath(path);
+        }
+    }
     
 }
