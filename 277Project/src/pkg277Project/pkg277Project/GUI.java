@@ -162,6 +162,11 @@ public class GUI extends javax.swing.JFrame {
 
         Delete.setText("Delete");
         File.add(Delete);
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new deleteDialog(null,true).show();
+            }
+        });
 
         Run.setText("Run");
         Run.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +284,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     private void CopyActionPerformed(java.awt.event.ActionEvent evt){
-        new copyingDialog(null,true).show(); 
+        new copyDialog(null,true, finalDrive).show(); 
     }
     
     private void RenameActionPerformed(java.awt.event.ActionEvent evt){
@@ -287,7 +292,6 @@ public class GUI extends javax.swing.JFrame {
         if (dir == null) {
             drive = finalDrive;
         } else {
-            System.out.println("hello");
             drive = dir.getPath();
         }
         new renameDialog(null,true,drive).show(); 
