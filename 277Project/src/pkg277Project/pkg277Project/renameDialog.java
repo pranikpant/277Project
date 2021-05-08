@@ -144,6 +144,7 @@ public class renameDialog extends javax.swing.JDialog {
         //final fileNode fn= new fileNode(old);
         //fn.renameFile(old, newN);
         Path source = Paths.get(og);
+        System.out.println("source: " + source);
         try {
             Files.move(source, source.resolveSibling(newFile));
         } catch (IOException e) {
