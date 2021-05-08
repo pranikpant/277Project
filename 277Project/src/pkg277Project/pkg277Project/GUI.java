@@ -290,7 +290,6 @@ public class GUI extends javax.swing.JFrame {
             System.out.println("hello");
             drive = dir.getPath();
         }
-        System.out.println("vfdiojna");
         new renameDialog(null,true,drive).show(); 
     }
 

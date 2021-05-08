@@ -17,6 +17,8 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.Serializable;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -144,7 +146,8 @@ public class FilePanel extends JPanel {
         //Object o = list.getModel().getElementAt(index);
         //System.out.println("Right CLick on: " + o.toString());     
         String renamePath = FilePanel.getPath() + ("\\") + currFile;
-        System.out.println("rename path: " + renamePath);
+        Path pathToFile = Paths.get(renamePath);
+        System.out.println("rename path: " + pathToFile.toAbsolutePath());
         new renameDialog(null,true,renamePath).show();                                   
 
         
