@@ -18,37 +18,39 @@ import java.util.ArrayList;
  *
  * @author ianbw
  */
-public class renameDialog extends javax.swing.JDialog {
+public class renameFile extends javax.swing.JDialog {
 
     private String fileName;
     private String newName;
     private DirPanel dir;
-    String path;
+    static String path;
     static String drivePath;
     /**
      * Creates new form renameDialog
      */
-    public renameDialog(java.awt.Frame parent, boolean modal, String drive) {
+
+    public renameFile(java.awt.Frame parent, boolean modal, String drive, String og) {
         super(parent, modal);
+        this.path = og;
         drivePath = drive;
         initComponents();
     }
-
-    /*
-    public void getPath(String address){
-        this.path = address;
-        System.out.println(path);
+    
+    public static String getPath(){
+        return path;
     }
-    */
+    
     public String getDrive(){
         return drivePath;
         //System.out.println(finalDrive);
             
     }
+    /*
     public String getDir(){
         this.path = dir.getPath();
         return this.path;
     }
+    */
 
 
     /**
@@ -74,9 +76,8 @@ public class renameDialog extends javax.swing.JDialog {
         Rename.setText("Okay");
         Rename.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fileName = From.getText();
                 newName = To.getText();
-                RenameActionPerformed(evt, fileName, newName);
+                RenameActionPerformed(evt, renameFile.getPath(), newName);
             }
         });
 

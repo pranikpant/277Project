@@ -52,6 +52,7 @@ public class FilePanel extends JPanel {
     private JScrollPane scrollPane = new JScrollPane();
     private popupMenu popup = new popupMenu(); 
     static String path;
+    String runPath;
     //DefaultListModel model = new DefaultListModel();
     
     public FilePanel(){
@@ -85,7 +86,7 @@ public class FilePanel extends JPanel {
             
                             System.out.println("Double-clicked on: " + FilePanel.getPath() + ("\\") + o.toString());
                     
-                            String runPath = FilePanel.getPath() + ("\\") + o.toString();
+                            runPath = FilePanel.getPath() + ("\\") + o.toString();
                             
                             final fileRun fr = new fileRun(runPath);
                             fr.run();
@@ -138,10 +139,11 @@ public class FilePanel extends JPanel {
         });         
     }
 
-    private void renameMenuItem (java.awt.event.ActionEvent evt) {     
+    private void renameMenuItem (java.awt.event.ActionEvent evt) {
+             
         String renamePath = FilePanel.getPath();
         System.out.println(renamePath);
-        new renameDialog(null,true,renamePath).show();                                   
+        new renameFile(null,true,runPath,renamePath).show();                                   
         System.out.println("renaming");
         
         
