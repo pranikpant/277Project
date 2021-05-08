@@ -116,7 +116,7 @@ public class FilePanel extends JPanel {
                     });
                     copy.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                            copyMenuItem(evt);
+                            copyMenuItem(evt, o.toString());
                         }
                     });
                     paste.addActionListener(new java.awt.event.ActionListener() {
@@ -166,8 +166,12 @@ public class FilePanel extends JPanel {
         
         
     }
-    private void copyMenuItem (java.awt.event.ActionEvent evt) {                                        
-        System.out.println("copying");
+    private void copyMenuItem (java.awt.event.ActionEvent evt, String currFile) {   
+
+        String renamePath = FilePanel.getPath() + ("\\") + currFile;
+        Path pathToFile = Paths.get(renamePath);
+        System.out.println("copy path: " + pathToFile.toAbsolutePath());
+        new copyDialog(null,true,renamePath).show();
         
         
     }
