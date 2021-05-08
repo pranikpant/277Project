@@ -107,7 +107,7 @@ public class FilePanel extends JPanel {
 
                     rename.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                            renameMenuItem(evt, theList);
+                            renameMenuItem(evt, o.toString());
                         }
                     });
                     copy.addActionListener(new java.awt.event.ActionListener() {
@@ -139,14 +139,14 @@ public class FilePanel extends JPanel {
         });         
     }
 
-    private void renameMenuItem (java.awt.event.ActionEvent evt, JList<String> list) {
-        int index = list.locationToIndex(evt.getPoint());
-        Object o = list.getModel().getElementAt(index);
+    private void renameMenuItem (java.awt.event.ActionEvent evt, String currFile) {
+        //int index = list.locationToIndex(evt.getPoint());
+        //Object o = list.getModel().getElementAt(index);
         //System.out.println("Right CLick on: " + o.toString());     
-        String renamePath = o.toString();
+        String renamePath = FilePanel.getPath() + ("\\") + currFile;
         System.out.println("rename path: " + renamePath);
         new renameDialog(null,true,renamePath).show();                                   
-        System.out.println("renaming");
+
         
         
     }
