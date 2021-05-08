@@ -28,9 +28,11 @@ import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.JList;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -124,7 +126,18 @@ public class FilePanel extends JPanel {
                     });
                     delete.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                            deleteMenuItem(evt);
+                            ListSelectionModel s = list.getSelectionModel();
+                            int index = s.getMinSelectionIndex();
+                            if (index >= 0) {
+                                //JOptionPane confirmDelete = new JOptionPane();
+                                int option = JOptionPane.YES_NO_OPTION;
+                                String deletePath = FilePanel.getPath() + ("\\") + o.toString();
+                                int optionResult = JOptionPane.showConfirmDialog(null, "Delete" + deletePath, "DELETING!", option);
+                                if (optionResult == 0){
+                                    System.out.println("deleting");
+                                    model.remove(index);
+                                }
+                            }
                         }
                     });
 
@@ -165,8 +178,7 @@ public class FilePanel extends JPanel {
     }
     private void deleteMenuItem (java.awt.event.ActionEvent evt) {                                        
         System.out.println("deleting");
-        
-        
+          
     }
     public void setPath(String drivepath) {
         path = drivepath;
