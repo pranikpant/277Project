@@ -194,7 +194,7 @@ public class FilePanel extends JPanel {
         return path;
     }
     
-    public void fillList(File dir) {
+    public void fillList(File dir, boolean details) {
         File[] files;
         files = dir.listFiles();
         model.clear();
@@ -202,8 +202,10 @@ public class FilePanel extends JPanel {
         for(int i=0; i<files.length; i++) {
             SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
             DecimalFormat size = new DecimalFormat("#,###");
-            if(!files[i].isHidden()) {
+            if(details){
                 model.addElement(files[i].getName() + " Date: " + date.format(files[i].lastModified()) + " Size: " + size.format(files[i].length()));
+            }else{
+                model.addElement(files[i].getName());
             }
         }
         list.setModel(model);
