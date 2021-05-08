@@ -31,7 +31,7 @@ public class renameFile extends javax.swing.JDialog {
 
     public renameFile(java.awt.Frame parent, boolean modal, String drive, String og) {
         super(parent, modal);
-        this.path = og;
+        renameFile.path = og;
         drivePath = drive;
         initComponents();
     }
